@@ -12,7 +12,7 @@ var instance = new Razorpay({
   });
 
 
- router.post('/pay',auth,async (req,res)=>{
+ router.post('/pay',async (req,res)=>{
 
   var options = {
     amount: req.body.amount,  // amount in the smallest currency unit
