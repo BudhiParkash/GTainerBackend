@@ -52,7 +52,7 @@ const adminBro = new AdminBro({
 const ADMIN = {
     email : process.env.ADMIN_EMAIL || 'Admin',
     password: process.env.ADMIN_PASSWORD || 'admin',
-    role : "super-admin"
+    role:"super-admin"
 }
 
 const router = AdminBroExpress.buildAuthenticatedRouter(adminBro,{

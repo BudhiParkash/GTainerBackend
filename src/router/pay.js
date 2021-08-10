@@ -4,10 +4,10 @@ const router = new express.Router()
 const auth = require('../middleware/auth')
 
 var instance = new Razorpay({
-    key_id: 'rzp_test_EeYjIbDHVrm4pO',
-    key_secret: 'wRVMfpQqgNOqpGH0bghSMrgM',
+    key_id: 'rzp_live_UbNAc0ejv51g8u',
+    key_secret: 'bZQppRFx1AyovA2f3YkpKn8p',
     headers: {
-      "X-Razorpay-Account": "EdH1lpSCoXSrk0"
+      "X-Razorpay-Account": "FBzFxxhn3qVFk7"
     }
   });
 
@@ -26,10 +26,10 @@ try {
          instance.orders.create(options, function(err, order) {
 
           if(order != null){
-            res.status(201).send([{order},{ key_id: 'rzp_test_EeYjIbDHVrm4pO'}]) 
+            res.status(201).send([{order},{ key_id: 'rzp_live_UbNAc0ejv51g8u'}]) 
           }
           else{
-            //console.log(err)
+            res.status(400).send('Payment Not Done')
           }
 
         
@@ -41,7 +41,3 @@ try {
 })
 
 module.exports = router
-
-
-
- // instance.orders.all().then(console.log).catch(console.error);
